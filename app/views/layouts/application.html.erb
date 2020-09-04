@@ -1,0 +1,23 @@
+<% content_for :navbar do %>
+  <%= render partial: "shared/navbar" %>
+<% end %>
+
+<% content_for :jumbotron do %>
+  <%= render partial: "shared/jumbotron" %>
+<% end %>
+
+<% content_for :alerts do %>
+  <%= render partial: "shared/alerts" %>
+<% end %>
+
+<% content_for :main do %>
+  <div class="container">
+    <%= content_for?(:application) ? yield(:application) : yield %>
+  </div>
+<% end %>
+
+<% content_for :footer do %>
+  <%= render partial: "shared/footer" %>
+<% end %>
+
+<%= render template: "layouts/main" %>
